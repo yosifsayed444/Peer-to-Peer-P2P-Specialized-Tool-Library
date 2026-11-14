@@ -1,0 +1,106 @@
+/* public/css/bootstrap-overrides.css */
+:root {
+    --bs-primary: #2c7da0;
+    --bs-primary-rgb: 44, 125, 160;
+    --bs-secondary: #f4a261;
+    --bs-success: #2a9d8f;
+    --bs-danger: #e63946;
+    --bs-warning: #f4a261;
+    --bs-info: #457b9d;
+    --bs-dark: #2b2d42;
+    --bs-light: #f8f9fa;
+    --bs-body-bg: #f5f7fa;
+    --bs-body-color: #2b2d42;
+    --bs-border-radius: 12px;
+    --bs-border-radius-lg: 16px;
+    --bs-body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.navbar-brand, .logo {
+    font-weight: 700;
+}
+
+.card {
+    border: 0;
+    border-radius: var(--bs-border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: var(--bs-primary);
+    --bs-btn-hover-border-color: var(--bs-primary);
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+}
+
+.badge {
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.table > :not(caption) > * > * {
+    vertical-align: middle;
+}
+
+.tool-card .card-body {
+    padding: 1.25rem;
+}
+
+.tool-card .card-footer {
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.sidebar-shell .sidebar-nav {
+    padding-top: 1rem;
+}
+
+.sidebar-item {
+    border-radius: 10px;
+    margin: 0.15rem 0.75rem;
+    padding: 0.7rem 1rem;
+}
+
+.sidebar-item.active {
+    background: rgba(44,125,160,0.12);
+    border-left: 0;
+    box-shadow: inset 3px 0 0 var(--bs-primary);
+}
+
+.footer {
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (max-width: 991.98px) {
+    .dashboard-container {
+        display: block;
+    }
+
+    .dashboard-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    .dashboard-main {
+        margin-left: 0;
+    }
+}

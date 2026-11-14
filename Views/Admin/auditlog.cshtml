@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Log - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-crown"></i> Admin Panel</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Admin/admindashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/Admin/adminsettings"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><a class="dropdown-item" href="/Admin/rolemanagement"><i class="fas fa-user-shield"></i> Roles</a></li>
+                            <li><a class="dropdown-item" href="/Admin/auditlog"><i class="fas fa-history"></i> Audit Log</a></li>
+                            <li><a class="dropdown-item" href="/Library/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="mb-4">
+                <a href="/Admin/admindashboard" class="btn btn-link px-0 text-decoration-none"><i class="fas fa-arrow-left me-1"></i> Back to Dashboard</a>
+                <h1 class="h2 fw-bold mt-2 mb-1"><i class="fas fa-history text-primary me-2"></i>System Audit Log</h1>
+                <p class="text-muted mb-0">Track all administrative actions, approvals, and system changes.</p>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4"><input type="text" class="form-control" placeholder="Search user or action"></div>
+                        <div class="col-md-3"><select class="form-select"><option>All actions</option><option>Booking</option><option>User</option><option>Tool</option><option>Payment</option><option>Dispute</option></select></div>
+                        <div class="col-md-3"><input type="date" class="form-control"></div>
+                        <div class="col-md-2"><button class="btn btn-outline-primary w-100"><i class="fas fa-filter"></i></button></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Entity</th><th>Details</th><th>IP</th></tr></thead>
+                            <tbody>
+                                <tr><td>Oct 28, 10:42 AM</td><td>Mahmoud Samir</td><td><span class="badge text-bg-info">Approval</span></td><td>Dispute #31</td><td>Resolved in favor of lender</td><td>10.0.0.14</td></tr>
+                                <tr><td>Oct 28, 09:15 AM</td><td>Admin</td><td><span class="badge text-bg-primary">Config</span></td><td>Settings</td><td>Commission changed to 18%</td><td>10.0.0.1</td></tr>
+                                <tr><td>Oct 27, 06:30 PM</td><td>Fatma Ezz</td><td><span class="badge text-bg-warning text-dark">KYC</span></td><td>User #42</td><td>Verified identity documents</td><td>10.0.0.22</td></tr>
+                                <tr><td>Oct 27, 04:12 PM</td><td>System</td><td><span class="badge text-bg-secondary">Scheduled</span></td><td>Tool #15</td><td>Maintenance inspection triggered</td><td>—</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5"><div class="container text-center text-muted"><p class="mb-1">© 2024 ToolShare. All rights reserved.</p><div class="d-flex justify-content-center gap-3"><a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a><a href="/Home/terms" class="text-decoration-none">Terms of Service</a><a href="/Home/support" class="text-decoration-none">Safety Guidelines</a></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Detail - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-user-cog"></i> Librarian Panel</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Library/supportdashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/Library/librariantasks"><i class="fas fa-list-check"></i> My Tasks</a></li>
+                            <li><a class="dropdown-item" href="/Library/disputes"><i class="fas fa-gavel"></i> Disputes</a></li>
+                            <li><a class="dropdown-item" href="/Library/inventoryaudits"><i class="fas fa-clipboard-check"></i> Audits</a></li>
+                            <li><a class="dropdown-item" href="/Library/insuranceclaims"><i class="fas fa-file-invoice"></i> Claims</a></li>
+                            <li><a class="dropdown-item" href="/Library/latereturns"><i class="fas fa-clock"></i> Late Returns</a></li>
+                            <li><a class="dropdown-item" href="/Library/blacklist"><i class="fas fa-ban"></i> Blacklist</a></li>
+                            <li><a class="dropdown-item" href="/Library/promotions"><i class="fas fa-bullhorn"></i> Campaigns</a></li>
+                            <li><a class="dropdown-item" href="/Library/broadcasts"><i class="fas fa-rss"></i> Broadcasts</a></li>
+                            <li><a class="dropdown-item" href="/Library/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                            <li><a class="dropdown-item" href="/Library/zones"><i class="fas fa-map-marked-alt"></i> Zones</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Home/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                            <li><a class="dropdown-item" href="/Home/profile"><i class="fas fa-user"></i> My Profile</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="mb-4">
+                <a href="/Library/insuranceclaims" class="btn btn-link px-0 text-decoration-none"><i class="fas fa-arrow-left me-1"></i> Back to Claims</a>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mt-2">
+                    <div><h1 class="h2 fw-bold mb-1">Claim #C-102</h1><p class="text-muted mb-0">3D Printer • Booking #1015 • Sara Mostafa</p></div>
+                    <span class="badge text-bg-warning text-dark fs-6">Open</span>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Claim Details</h2></div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4"><div class="border rounded p-3 h-100"><div class="text-muted small">Tool</div><strong>3D Printer</strong></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 h-100"><div class="text-muted small">Value</div><strong>15,000 EGP</strong></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 h-100"><div class="text-muted small">Incident Date</div><strong>Oct 22, 2026</strong></div></div>
+                                <div class="col-12"><div class="border rounded p-3"><div class="text-muted small mb-1">Description</div><p class="mb-0">Printer was stolen from borrower’s home during rental period. Police report attached.</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Evidence</h2></div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-image fa-2x text-muted mb-2"></i><div class="small fw-semibold">Damage Photo</div></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-file-pdf fa-2x text-danger mb-2"></i><div class="small fw-semibold">Police Report</div></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-file-alt fa-2x text-primary mb-2"></i><div class="small fw-semibold">Booking Record</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Actions</h2></div>
+                        <div class="card-body d-grid gap-2">
+                            <button class="btn btn-primary"><i class="fas fa-file-export"></i> Generate Insurance Report</button>
+                            <button class="btn btn-outline-secondary"><i class="fas fa-download"></i> Download PDF</button>
+                            <button class="btn btn-outline-warning"><i class="fas fa-user-shield"></i> Request more info</button>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Claim Status</h2></div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2"><span>Submitted</span><strong>Oct 22</strong></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Under review</span><strong>Oct 25</strong></div>
+                            <div class="d-flex justify-content-between"><span>Decision</span><strong class="text-warning">Pending</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5"><div class="container text-center text-muted"><p class="mb-1">© 2024 ToolShare. All rights reserved.</p><div class="d-flex justify-content-center gap-3"><a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a><a href="/Home/terms" class="text-decoration-none">Terms of Service</a><a href="/Home/support" class="text-decoration-none">Safety Guidelines</a></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

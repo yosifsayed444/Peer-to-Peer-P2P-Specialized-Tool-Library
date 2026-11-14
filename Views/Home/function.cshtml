@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Detail - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/dashboard.css?v=2">
+    <link rel="stylesheet" href="/css/components.css">
+    <style>
+        .sidebar-item .fn-num { background: var(--light-color); border: 1px solid var(--border-color); color: var(--secondary-color); border-radius: 4px; font-size: 0.6rem; font-weight: 700; width: 1.5rem; text-align: center; flex-shrink: 0; font-family: monospace; }
+        .sidebar-item .fn-name { font-size: 0.82rem; }
+    </style>
+</head>
+<body>
+    <!-- Navbar (admin template) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/Home/Index" class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolShare</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/Home/Index" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/Home/tools" class="nav-link"><i class="fas fa-search"></i> Browse Tools</a>
+                <a href="/Admin/admindashboard" class="nav-link"><i class="fas fa-crown"></i> Admin Panel</a>
+                <a href="/Home/profile" class="nav-link"><i class="fas fa-user"></i> Profile</a>
+                <button class="btn btn-outline"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-nav" id="sidebar-nav"></div>
+        </aside>
+
+        <main class="dashboard-main" id="fn-page">
+            <a href="/Admin/admindashboard" style="color: var(--gray-color); text-decoration: none; font-size: 0.875rem;">
+                <i class="fas fa-arrow-left"></i> Dashboard Overview
+            </a>
+
+            <h1 id="fn-heading" style="display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0;">
+                <span id="fn-icon" class="activity-icon" style="width: 3rem; height: 3rem; font-size: 1.25rem;"><i class="fas fa-cog"></i></span>
+                <span id="fn-title">Loading function…</span>
+            </h1>
+
+            <div id="fn-badges" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;"></div>
+
+            <div class="card" style="max-width: 760px;">
+                <div class="card-header"><i class="fas fa-lightbulb"></i> Core Idea</div>
+                <div class="card-body">
+                    <p id="fn-idea" style="margin: 0; line-height: 1.7;">…</p>
+                </div>
+            </div>
+
+            <div class="card" style="max-width: 760px;">
+                <div class="card-header"><i class="fas fa-code-branch"></i> Implementation Notes (.NET MVC)</div>
+                <div class="card-body">
+                    <ul style="margin: 0; padding-left: 1.25rem; line-height: 2;">
+                        <li><strong>View</strong> — Razor page matching this mock: <code id="fn-view-name" style="background: var(--light-color); padding: 0.15rem 0.4rem; border-radius: 4px;">Function/Function01.cshtml</code></li>
+                        <li><strong>Controller</strong> — <code>FunctionController</code> action serving the data for this specific function.</li>
+                        <li><strong>Model</strong> — entities + EF Core queries per the function's rule (search result at the bottom of the page shows an example placeholder).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="max-width: 760px;">
+                <div class="card-header"><i class="fas fa-eye"></i> Example placeholder (from the project PDF)</div>
+                <div class="card-body">
+                    <p id="fn-example" style="margin: 0; color: var(--gray-color); font-style: italic;">…</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile menu + function loader -->
+    <script src="/js/functions-data.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        (function () {
+            const params = new URLSearchParams(location.search);
+            const fn = getFn(params.get('fn'));
+            const role = fn && fn.unit === 2 ? 'support' : 'admin';
+            const mainEl = document.getElementById('fn-page');
+
+            if (!fn) {
+                // Directory of all 42 functions
+                mainEl.innerHTML = `
+                <a href="/Admin/admindashboard" style="color: var(--gray-color); text-decoration: none; font-size: 0.875rem;">
+                    <i class="fas fa-arrow-left"></i> Dashboard Overview</a>
+                <h1 style="margin: 1rem 0;"><i class="fas fa-th-large"></i> All 42 Functions</h1>
+                <div id="fn-directory"></div>`;
+                let html = '';
+                for (const unit of [1, 2, 3]) {
+                    html += `<h2 style="margin: 1.5rem 0 1rem; font-size: 1rem;">${UNIT_NAMES[unit]}</h2>
+                             <div class="quick-actions" style="margin-bottom: 1rem;">`;
+                    for (const f of FUNCTIONS.filter(x => x.unit === unit)) {
+                        html += `<a class="quick-action-card" href="${fnUrl(f.n)}"
+                                    style="text-decoration: none; color: var(--dark-color); font-size: 0.85rem;">
+                                    <span class="fn-num" style="background: var(--light-color); border: 1px solid var(--border-color); color: var(--secondary-color); border-radius: 4px; font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.3rem;">${String(f.n).padStart(2, '0')}</span>
+                                    <div style="margin-top: 0.5rem;"><i class="fas ${f.icon}" style="color: var(--primary-color); margin-right: 0.25rem;"></i> ${f.name}</div>
+                                    <div style="font-size: 0.7rem; color: var(--gray-color); margin-top: 0.25rem;">${f.difficulty}</div>
+                                </a>`;
+                    }
+                    html += '</div>';
+                }
+                document.getElementById('fn-directory').innerHTML = html;
+                renderSidebar('admin', 'function.html?fn=');
+            } else {
+                document.getElementById('fn-icon').innerHTML = `<i class="fas ${fn.icon}"></i>`;
+                document.getElementById('fn-title').textContent =
+                    `${String(fn.n).padStart(2, '0')} — ${fn.name}`;
+                document.getElementById('fn-idea').textContent = fn.idea;
+                document.getElementById('fn-view-name').textContent = `Function/Function${String(fn.n).padStart(2, '0')}.cshtml`;
+                document.getElementById('fn-badges').innerHTML =
+                    `<span class="badge badge-primary">${UNIT_NAMES[fn.unit]}</span>` +
+                    `<span class="badge badge-${fn.difficulty === 'Hard' ? 'danger' : fn.difficulty === 'Medium' ? 'warning' : 'success'}">${fn.difficulty}</span>`;
+                document.getElementById('fn-example').textContent =
+                    'In the final .NET MVC build this panel shows a live example produced by the function, e.g. a chart, table row, or KPI card matching the teamwork mock.';
+
+                renderSidebar(role, fnUrl(fn.n));
+                document.title = `FN ${String(fn.n).padStart(2, '0')} — ${fn.name} — P2P Tool Library`;
+            }
+        })();
+    </script>
+    <script src="/js/dashboard-ui.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

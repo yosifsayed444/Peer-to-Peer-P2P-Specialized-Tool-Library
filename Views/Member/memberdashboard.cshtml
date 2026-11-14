@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/memberdashboard"><i class="fas fa-gauge-high"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/mytools"><i class="fas fa-toolbox"></i> My Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/mybookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/wallet"><i class="fas fa-wallet"></i> Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/notifications"><i class="fas fa-bell"></i> Alerts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/profile"><i class="fas fa-user"></i> Profile</a></li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div>
+                    <h1 class="h2 fw-bold mb-1">Welcome back, Ahmed</h1>
+                    <p class="text-muted mb-0">Here is your rental activity, tools, wallet, and alerts.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="/Home/tools" class="btn btn-primary"><i class="fas fa-search"></i> Browse Tools</a>
+                    <a href="/Member/addtool" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Add Tool</a>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="text-muted small">Active Rentals</div>
+                            <div class="display-6 fw-bold">2</div>
+                            <div class="text-success small"><i class="fas fa-arrow-up"></i> 1 due this week</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="text-muted small">My Tools</div>
+                            <div class="display-6 fw-bold">4</div>
+                            <div class="text-primary small"><i class="fas fa-arrow-up"></i> 1 pending approval</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="text-muted small">Wallet Balance</div>
+                            <div class="display-6 fw-bold">1,250 EGP</div>
+                            <div class="text-muted small">Deposits held: 500 EGP</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="text-muted small">Unread Alerts</div>
+                            <div class="display-6 fw-bold">3</div>
+                            <div class="text-warning small"><i class="fas fa-bell"></i> Includes 1 late return warning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h2 class="h5 mb-0">Current & Upcoming Bookings</h2>
+                            <a href="/Member/mybookings" class="btn btn-sm btn-outline-primary">View All</a>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex flex-column flex-md-row justify-content-between gap-3">
+                                <div>
+                                    <div class="fw-semibold">Cordless Drill</div>
+                                    <div class="text-muted small">Monika Adel • Nasr City • Oct 20 → Oct 24</div>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge text-bg-success">Confirmed</span>
+                                    <div class="small text-muted mt-1">300 EGP + 500 EGP deposit</div>
+                                    <a href="/Member/bookingdetail" class="btn btn-sm btn-outline-primary mt-2">Open</a>
+                                </div>
+                            </div>
+                            <div class="list-group-item d-flex flex-column flex-md-row justify-content-between gap-3">
+                                <div>
+                                    <div class="fw-semibold">3D Printer</div>
+                                    <div class="text-muted small">Sara Mostafa • Zamalek • Oct 21 → Oct 25</div>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge text-bg-warning text-dark">Pending Approval</span>
+                                    <div class="small text-muted mt-1">600 EGP + 3,000 EGP deposit</div>
+                                    <a href="/Member/bookingdetail" class="btn btn-sm btn-outline-primary mt-2">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h2 class="h5 mb-0">My Listed Tools</h2>
+                            <a href="/Member/mytools" class="btn btn-sm btn-outline-primary">Manage</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded p-3 h-100">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="fw-semibold">Screwdriver Set</div>
+                                            <span class="badge text-bg-success">Available</span>
+                                        </div>
+                                        <div class="text-muted small mt-1">20 EGP/day • 2 upcoming bookings</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded p-3 h-100">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="fw-semibold">Garden Shears</div>
+                                            <span class="badge text-bg-info">Rented</span>
+                                        </div>
+                                        <div class="text-muted small mt-1">25 EGP/day • Return Oct 24</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Wallet Snapshot</h2></div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                <span>Available</span><strong>1,250 EGP</strong>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                <span>Deposits held</span><strong>500 EGP</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Pending refunds</span><strong>120 EGP</strong>
+                            </div>
+                            <a href="/Member/wallet" class="btn btn-outline-primary w-100 mt-3">Open Wallet</a>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Latest Notifications</h2></div>
+                        <div class="list-group list-group-flush">
+                            <a href="/Member/notifications" class="list-group-item list-group-item-action">
+                                <div class="fw-semibold small">Booking reminder</div>
+                                <div class="text-muted small">Cordless Drill handover tomorrow at 5:30 PM.</div>
+                            </a>
+                            <a href="/Member/notifications" class="list-group-item list-group-item-action">
+                                <div class="fw-semibold small">Maintenance alert</div>
+                                <div class="text-muted small">Garden Shears battery health dropped to 71%.</div>
+                            </a>
+                            <a href="/Member/notifications" class="list-group-item list-group-item-action">
+                                <div class="fw-semibold small">Payment update</div>
+                                <div class="text-muted small">Deposit released for booking #1008.</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5">
+        <div class="container text-center text-muted">
+            <p class="mb-1">© 2024 ToolShare. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a>
+                <a href="/Home/terms" class="text-decoration-none">Terms of Service</a>
+                <a href="/Home/support" class="text-decoration-none">Safety Guidelines</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

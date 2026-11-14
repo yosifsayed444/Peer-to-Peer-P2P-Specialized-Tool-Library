@@ -16,6 +16,7 @@ namespace Peer_to_Peer__P2P__Specialized_Tool_Library
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();

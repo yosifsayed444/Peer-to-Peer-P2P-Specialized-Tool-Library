@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Management - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/dashboard.css?v=2">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-crown"></i> Admin Panel</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Admin/admindashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/Library/librariantasks"><i class="fas fa-list-check"></i> Tasks</a></li>
+                            <li><a class="dropdown-item" href="/Library/bookings"><i class="fas fa-calendar-alt"></i> Bookings</a></li>
+                            <li><a class="dropdown-item" href="/Library/toolsadmin"><i class="fas fa-tools"></i> Tools</a></li>
+                            <li><a class="dropdown-item" href="/Library/users"><i class="fas fa-users"></i> Users</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Library/inventoryaudits"><i class="fas fa-clipboard-check"></i> Audits</a></li>
+                            <li><a class="dropdown-item" href="/Library/insuranceclaims"><i class="fas fa-file-invoice"></i> Claims</a></li>
+                            <li><a class="dropdown-item" href="/Library/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                            <li><a class="dropdown-item" href="/Library/zones"><i class="fas fa-map-marked-alt"></i> Zones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div>
+                    <h1 class="h2 fw-bold mb-1"><i class="fas fa-tools text-primary me-2"></i>Tools Management</h1>
+                    <p class="text-muted mb-0">Review all tool listings, statuses, pricing, and maintenance flags.</p>
+                </div>
+                <a href="/Member/addtool" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New Tool</a>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Available</div><div class="display-6 fw-bold text-success">61</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Currently Rented</div><div class="display-6 fw-bold text-primary">22</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Locked / Unfit</div><div class="display-6 fw-bold text-danger">4</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Warranty Expiring</div><div class="display-6 fw-bold text-warning">9</div></div></div></div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4"><input type="text" class="form-control" placeholder="Search tool"></div>
+                        <div class="col-md-3"><select class="form-select"><option>All categories</option><option>Power Tools</option><option>Hand Tools</option><option>Garden</option><option>3D Printing</option></select></div>
+                        <div class="col-md-3"><select class="form-select"><option>All zones</option><option>Nasr City</option><option>Maadi</option><option>Heliopolis</option><option>Dokki</option><option>Zamalek</option></select></div>
+                        <div class="col-md-2"><button class="btn btn-outline-primary w-100"><i class="fas fa-filter"></i> Apply</button></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead><tr><th>ID</th><th>Tool</th><th>Owner</th><th>Category</th><th>Zone</th><th>Price/Day</th><th>Rating Sort</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td>#22</td><td>Cordless Drill</td><td>Monika Adel</td><td>Power Tools</td><td>Nasr City</td><td>75 EGP</td><td><span class="text-warning">★★★★★</span></td><td><span class="badge text-bg-success">available</span></td><td><a href="/Home/tooldetail" class="btn btn-sm btn-outline-primary">View</a> <a href="/Maintenance/toolhealth" class="btn btn-sm btn-outline-warning">Health</a> <button class="btn btn-sm btn-outline-secondary">Edit</button></td></tr>
+                                <tr><td>#18</td><td>Angle Grinder</td><td>Monika Adel</td><td>Power Tools</td><td>Nasr City</td><td>60 EGP</td><td><span class="text-warning">★★★★☆</span></td><td><span class="badge text-bg-info">rented</span></td><td><a href="/Home/tooldetail" class="btn btn-sm btn-outline-primary">View</a> <a href="/Maintenance/toolhealth" class="btn btn-sm btn-outline-warning">Health</a></td></tr>
+                                <tr><td>#15</td><td>3D Printer</td><td>Sara Mostafa</td><td>3D Printing</td><td>Zamalek</td><td>150 EGP</td><td><span class="text-warning">★★★★★</span></td><td><span class="badge text-bg-warning text-dark">pending approval</span></td><td><a href="/Home/tooldetail" class="btn btn-sm btn-outline-primary">View</a> <button class="btn btn-sm btn-outline-success">Approve</button></td></tr>
+                                <tr><td>#11</td><td>Garden Shears</td><td>Ahmed Hassan</td><td>Garden</td><td>Maadi</td><td>25 EGP</td><td><span class="text-warning">★★★★☆</span></td><td><span class="badge text-bg-danger">maintenance</span></td><td><a href="/Maintenance/toolhealth" class="btn btn-sm btn-outline-warning">Health</a> <button class="btn btn-sm btn-outline-danger">Lock</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5"><div class="container text-center text-muted"><p class="mb-1">© 2024 ToolShare. All rights reserved.</p><div class="d-flex justify-content-center gap-3"><a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a><a href="/Home/terms" class="text-decoration-none">Terms of Service</a><a href="/Home/support" class="text-decoration-none">Safety Guidelines</a></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

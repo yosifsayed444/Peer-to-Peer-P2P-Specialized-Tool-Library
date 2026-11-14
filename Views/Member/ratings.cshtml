@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/memberdashboard"><i class="fas fa-gauge-high"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/mytools"><i class="fas fa-toolbox"></i> My Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/mybookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/wallet"><i class="fas fa-wallet"></i> Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Member/notifications"><i class="fas fa-bell"></i> Alerts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/profile"><i class="fas fa-user"></i> Profile</a></li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="mb-4">
+                <h1 class="h2 fw-bold mb-1"><i class="fas fa-star text-warning me-2"></i>Ratings & Reviews</h1>
+                <p class="text-muted mb-0">See feedback from borrowers and lenders after completed rentals.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body text-center">
+                            <div class="display-4 fw-bold">4.7</div>
+                            <div class="text-warning mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <div class="text-muted">Average rating • 128 reviews</div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Rating Breakdown</h2></div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2"><span>5 stars</span><div class="progress flex-grow-1 mx-2" style="height:8px;"><div class="progress-bar bg-warning" style="width:78%;"></div></div><strong>78%</strong></div>
+                            <div class="d-flex justify-content-between mb-2"><span>4 stars</span><div class="progress flex-grow-1 mx-2" style="height:8px;"><div class="progress-bar bg-warning" style="width:15%;"></div></div><strong>15%</strong></div>
+                            <div class="d-flex justify-content-between"><span>3 stars</span><div class="progress flex-grow-1 mx-2" style="height:8px;"><div class="progress-bar bg-warning" style="width:5%;"></div></div><strong>5%</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:48px;height:48px;">SA</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between"><strong>Sara Mostafa</strong><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+                                    <div class="text-muted small">Cordless Drill • Oct 2026</div>
+                                    <p class="mb-0 mt-1">Tool was clean and worked perfectly. Owner was very helpful.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width:48px;height:48px;">OM</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between"><strong>Omar Ali</strong><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></div>
+                                    <div class="text-muted small">Angle Grinder • Sep 2026</div>
+                                    <p class="mb-0 mt-1">Good tool, but return process took longer than expected.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center" style="width:48px;height:48px;">HA</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between"><strong>Hana Yousry</strong><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+                                    <div class="text-muted small">Garden Shears • Aug 2026</div>
+                                    <p class="mb-0 mt-1">Exactly as described. Would borrow again.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5"><div class="container text-center text-muted"><p class="mb-1">© 2024 ToolShare. All rights reserved.</p><div class="d-flex justify-content-center gap-3"><a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a><a href="/Home/terms" class="text-decoration-none">Terms of Service</a><a href="/Home/support" class="text-decoration-none">Safety Guidelines</a></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

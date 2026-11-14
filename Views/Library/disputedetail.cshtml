@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispute Detail - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-user-cog"></i> Librarian Panel</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Library/supportdashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/Library/librariantasks"><i class="fas fa-list-check"></i> My Tasks</a></li>
+                            <li><a class="dropdown-item" href="/Library/disputes"><i class="fas fa-gavel"></i> Disputes</a></li>
+                            <li><a class="dropdown-item" href="/Library/inventoryaudits"><i class="fas fa-clipboard-check"></i> Audits</a></li>
+                            <li><a class="dropdown-item" href="/Library/insuranceclaims"><i class="fas fa-file-invoice"></i> Claims</a></li>
+                            <li><a class="dropdown-item" href="/Library/latereturns"><i class="fas fa-clock"></i> Late Returns</a></li>
+                            <li><a class="dropdown-item" href="/Library/blacklist"><i class="fas fa-ban"></i> Blacklist</a></li>
+                            <li><a class="dropdown-item" href="/Library/promotions"><i class="fas fa-bullhorn"></i> Campaigns</a></li>
+                            <li><a class="dropdown-item" href="/Library/broadcasts"><i class="fas fa-rss"></i> Broadcasts</a></li>
+                            <li><a class="dropdown-item" href="/Library/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                            <li><a class="dropdown-item" href="/Library/zones"><i class="fas fa-map-marked-alt"></i> Zones</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Home/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                            <li><a class="dropdown-item" href="/Home/profile"><i class="fas fa-user"></i> My Profile</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="mb-4">
+                <a href="/Library/disputes" class="btn btn-link px-0 text-decoration-none"><i class="fas fa-arrow-left me-1"></i> Back to Disputes</a>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mt-2">
+                    <div><h1 class="h2 fw-bold mb-1">Dispute #33</h1><p class="text-muted mb-0">Angle Grinder • Damage claim • Opened Oct 26, 2026</p></div>
+                    <span class="badge text-bg-warning text-dark fs-6">Open</span>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Case Summary</h2></div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6"><div class="border rounded p-3 h-100"><div class="text-muted small">Reported By</div><strong>Omar Ali</strong><div class="text-muted small">Borrower</div></div></div>
+                                <div class="col-md-6"><div class="border rounded p-3 h-100"><div class="text-muted small">Against</div><strong>Monika Adel</strong><div class="text-muted small">Lender</div></div></div>
+                                <div class="col-md-6"><div class="border rounded p-3 h-100"><div class="text-muted small">Tool</div><strong>Angle Grinder</strong><div class="text-muted small">Booking #1010</div></div></div>
+                                <div class="col-md-6"><div class="border rounded p-3 h-100"><div class="text-muted small">Deposit at Risk</div><strong>700 EGP</strong><div class="text-muted small">Held in escrow</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Evidence</h2></div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-image fa-2x text-muted mb-2"></i><div class="small fw-semibold">Pickup Photo</div><div class="text-muted small">Before rental</div></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-image fa-2x text-muted mb-2"></i><div class="small fw-semibold">Return Photo</div><div class="text-muted small">After return</div></div></div>
+                                <div class="col-md-4"><div class="border rounded p-3 text-center h-100"><i class="fas fa-file-medical fa-2x text-danger mb-2"></i><div class="small fw-semibold">Damage Report</div><div class="text-muted small">New scratch on guard</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Messages</h2></div>
+                        <div class="card-body">
+                            <div class="msg-list mb-3">
+                                <div class="border rounded p-3 mb-2 bg-light"><strong>Omar Ali:</strong> The guard was scratched during use. I reported it immediately.</div>
+                                <div class="border rounded p-3 mb-2"><strong>Monika Adel:</strong> The scratch was already there before handover. I have the pickup photo.</div>
+                                <div class="border rounded p-3"><strong>Librarian:</strong> Please upload clearer photos of the scratch area.</div>
+                            </div>
+                            <div class="input-group"><input type="text" class="form-control" placeholder="Write a message…"><button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Decision</h2></div>
+                        <div class="card-body">
+                            <label class="form-label">Resolution</label>
+                            <select class="form-select mb-3"><option>Release deposit to lender</option><option>Partial refund to borrower</option><option>Full refund to borrower</option><option>Split deposit</option></select>
+                            <label class="form-label">Notes</label>
+                            <textarea class="form-control mb-3" rows="4" placeholder="Explain the decision…"></textarea>
+                            <button class="btn btn-success w-100 mb-2"><i class="fas fa-check"></i> Issue Decision</button>
+                            <button class="btn btn-outline-secondary w-100"><i class="fas fa-clock"></i> Request More Evidence</button>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Timeline</h2></div>
+                        <div class="card-body">
+                            <div class="d-flex gap-2 mb-2"><div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:28px;height:28px;flex:0 0 28px;font-size:.75rem;"><i class="fas fa-plus"></i></div><div><strong>Opened</strong><div class="text-muted small">Oct 26 • Omar Ali</div></div></div>
+                            <div class="d-flex gap-2 mb-2"><div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center" style="width:28px;height:28px;flex:0 0 28px;font-size:.75rem;"><i class="fas fa-search"></i></div><div><strong>Under review</strong><div class="text-muted small">Oct 27 • Mahmoud Samir</div></div></div>
+                            <div class="d-flex gap-2"><div class="rounded-circle bg-light text-muted border d-flex align-items-center justify-content-center" style="width:28px;height:28px;flex:0 0 28px;font-size:.75rem;"><i class="fas fa-gavel"></i></div><div><strong>Decision pending</strong><div class="text-muted small">Awaiting evidence</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5"><div class="container text-center text-muted"><p class="mb-1">© 2024 ToolShare. All rights reserved.</p><div class="d-flex justify-content-center gap-3"><a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a><a href="/Home/terms" class="text-decoration-none">Terms of Service</a><a href="/Home/support" class="text-decoration-none">Safety Guidelines</a></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

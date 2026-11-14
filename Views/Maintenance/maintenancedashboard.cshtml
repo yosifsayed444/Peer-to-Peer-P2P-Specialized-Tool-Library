@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Dashboard - P2P Tool Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css?v=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="/Home/Index"><i class="fas fa-tools"></i><span>ToolShare</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/tools"><i class="fas fa-search"></i> Browse Tools</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-screwdriver-wrench"></i> Maintenance Panel</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Maintenance/maintenancedashboard"><i class="fas fa-gauge-high"></i> Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/Maintenance/toolhealth"><i class="fas fa-heart-pulse"></i> Tool Health</a></li>
+                            <li><a class="dropdown-item" href="/Maintenance/externalrepair"><i class="fas fa-external-link-alt"></i> External Repair</a></li>
+                            <li><a class="dropdown-item" href="/Maintenance/disposal"><i class="fas fa-recycle"></i> Disposal</a></li>
+                            <li><a class="dropdown-item" href="/Maintenance/maintenancehistory"><i class="fas fa-history"></i> History</a></li>
+                            <li><a class="dropdown-item" href="/Maintenance/technicianmetrics"><i class="fas fa-chart-line"></i> Metrics</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div>
+                    <h1 class="h2 fw-bold mb-1">Maintenance Dashboard</h1>
+                    <p class="text-muted mb-0">Monitor tool health, repair queue, safety alerts, and technician workload.</p>
+                </div>
+                <a href="/Maintenance/maintenancehistory" class="btn btn-outline-primary"><i class="fas fa-history"></i> History</a>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Needs Inspection</div><div class="display-6 fw-bold text-warning">9</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">In Repair</div><div class="display-6 fw-bold text-primary">6</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">External Repair</div><div class="display-6 fw-bold text-info">3</div></div></div></div>
+                <div class="col-md-3"><div class="card shadow-sm"><div class="card-body"><div class="text-muted small">Unfit / Locked</div><div class="display-6 fw-bold text-danger">4</div></div></div></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Priority Repair Queue</h2></div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead><tr><th>Tool</th><th>Issue</th><th>Owner</th><th>Demand</th><th>Priority</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Cordless Drill</td><td>Motor burnout</td><td>Monika Adel</td><td>8 upcoming bookings</td><td><span class="badge text-bg-danger">High</span></td><td><span class="badge text-bg-warning text-dark">Queued</span></td><td><button class="btn btn-sm btn-outline-primary">Assign</button></td></tr>
+                                    <tr><td>3D Printer</td><td>Nozzle clogged</td><td>Sara Mostafa</td><td>5 bookings</td><td><span class="badge text-bg-warning text-dark">Medium</span></td><td><span class="badge text-bg-info">In repair</span></td><td><button class="btn btn-sm btn-outline-primary">Details</button></td></tr>
+                                    <tr><td>Angle Grinder</td><td>Safety guard damaged</td><td>Monika Adel</td><td>2 bookings</td><td><span class="badge text-bg-danger">High</span></td><td><span class="badge text-bg-danger">Locked</span></td><td><button class="btn btn-sm btn-outline-primary">Review</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Upcoming Inspections</h2></div>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex justify-content-between align-items-center"><div><strong>Garden Shears</strong><div class="text-muted small">Battery replacement due</div></div><span class="badge text-bg-warning text-dark">In 3 days</span></div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center"><div><strong>Cordless Drill</strong><div class="text-muted small">Safety certificate expires</div></div><span class="badge text-bg-danger">Tomorrow</span></div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center"><div><strong>3D Printer</strong><div class="text-muted small">Routine inspection</div></div><span class="badge text-bg-secondary">Next week</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Quick Actions</h2></div>
+                        <div class="card-body d-grid gap-2">
+                            <a href="/Maintenance/externalrepair" class="btn btn-outline-primary"><i class="fas fa-external-link-alt"></i> External Repair</a>
+                            <a href="/Maintenance/disposal" class="btn btn-outline-danger"><i class="fas fa-recycle"></i> Dispose / Retire</a>
+                            <a href="/Maintenance/maintenancehistory" class="btn btn-outline-secondary"><i class="fas fa-history"></i> Maintenance History</a>
+                            <a href="/Maintenance/technicianmetrics" class="btn btn-outline-info"><i class="fas fa-chart-line"></i> Technician Metrics</a>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white"><h2 class="h5 mb-0">Alerts</h2></div>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item"><i class="fas fa-exclamation-circle text-danger me-2"></i> Angle Grinder locked due to failed inspection</div>
+                            <div class="list-group-item"><i class="fas fa-battery-half text-warning me-2"></i> Garden Shears battery health at 71%</div>
+                            <div class="list-group-item"><i class="fas fa-certificate text-primary me-2"></i> Cordless Drill certificate expires tomorrow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-5">
+        <div class="container text-center text-muted">
+            <p class="mb-1">© 2024 ToolShare. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/Home/privacy" class="text-decoration-none">Privacy Policy</a>
+                <a href="/Home/terms" class="text-decoration-none">Terms of Service</a>
+                <a href="/Home/support" class="text-decoration-none">Safety Guidelines</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+</html>
